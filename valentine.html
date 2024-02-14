@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Will You Be My Valentine?</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+  }
+  .container {
+    text-align: center;
+    margin-top: 100px;
+  }
+  h1 {
+    color: #ff69b4;
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
+  .heart {
+    color: #ff69b4;
+    font-size: 48px;
+  }
+  .button {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  .button.yes {
+    background-color: #32CD32;
+    color: white;
+  }
+  .button.no {
+    background-color: #FF6347;
+    color: white;
+  }
+  .overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+  }
+  .modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  .smiley {
+    font-size: 100px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+  }
+  .sad-face {
+    font-size: 60px;
+    color: #ff69b4;
+    margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Will You Be My Valentine?</h1>
+  <div class="heart">&hearts;</div>
+  <div>
+    <button class="button yes">Yes</button>
+    <button class="button no">No</button>
+  </div>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal" id="modal">
+    <div class="smiley">&#128512;</div>
+    <h1>Ok YAY!!!!</h1>
+  </div>
+</div>
+
+<div class="overlay" id="overlay-sad">
+  <div class="modal" id="modal-sad">
+    <div class="sad-face">&#128577;</div>
+    <h1>Oh okay....</h1>
+  </div>
+</div>
+
+<script>
+  document.querySelector('.yes').addEventListener('click', function() {
+    document.getElementById('overlay').style.display = 'block';
+  });
+
+  document.querySelector('.no').addEventListener('click', function() {
+    document.getElementById('overlay-sad').style.display = 'block';
+  });
+</script>
+
+</body>
+</html>
